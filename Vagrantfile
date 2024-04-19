@@ -7,42 +7,70 @@ boxes = [
   {
     :name => "ubuntu-1604",
     :box => "bento/ubuntu-16.04",
-    :ip => '10.0.0.12',
+    :ip => '10.0.0.3',
     :cpu => "50",
     :ram => "256"
   },
   {
     :name => "ubuntu-1804",
     :box => "bento/ubuntu-18.04",
-    :ip => '10.0.0.13',
+    :ip => '10.0.0.4',
     :cpu => "50",
     :ram => "384"
   },
   {
     :name => "ubuntu-2004",
     :box => "bento/ubuntu-20.04",
-    :ip => '10.0.0.14',
+    :ip => '10.0.0.5',
     :cpu => "50",
     :ram => "384"
   },
   {
+    :name => "ubuntu-2204",
+    :box => "bento/ubuntu-22.04",
+    :ip => '10.0.0.6',
+    :cpu => "50",
+    :ram => "384"
+  },  
+  {
     :name => "debian-8",
     :box => "bento/debian-8",
-    :ip => '10.0.0.16',
+    :ip => '10.0.1.3',
     :cpu => "50",
     :ram => "256"
   },
   {
     :name => "debian-9",
     :box => "bento/debian-9",
-    :ip => '10.0.0.17',
+    :ip => '10.0.1.4',
     :cpu => "50",
     :ram => "256"
   },
   {
     :name => "debian-10",
     :box => "bento/debian-10",
-    :ip => '10.0.0.18',
+    :ip => '10.0.1.5',
+    :cpu => "50",
+    :ram => "256"
+  },
+  {
+    :name => "debian-11",
+    :box => "bento/debian-11",
+    :ip => '10.0.1.6',
+    :cpu => "50",
+    :ram => "256"
+  },
+  {
+    :name => "debian-12",
+    :box => "bento/debian-12",
+    :ip => '10.0.1.7',
+    :cpu => "50",
+    :ram => "256"
+  },
+  {
+    :name => "amazonlinux-2023",
+    :box => "bento/amazonlinux-2023",
+    :ip => '10.0.2.3',
     :cpu => "50",
     :ram => "256"
   },

@@ -4,7 +4,10 @@
 [![CI](https://github.com/Oefenweb/ansible-dnsmasq/workflows/CI/badge.svg)](https://github.com/Oefenweb/ansible-dnsmasq/actions?query=workflow%3ACI)
 [![Ansible Galaxy](http://img.shields.io/badge/ansible--galaxy-dnsmasq-blue.svg)](https://galaxy.ansible.com/Oefenweb/dnsmasq/)
 
-Set up [Dnsmasq](http://www.thekelleys.org.uk/dnsmasq/doc.html) in Debian-like systems.
+Set up [Dnsmasq](http://www.thekelleys.org.uk/dnsmasq/doc.html) in select systems.
+* Debian
+* Ubuntu
+* Amazon Linux 2023
 
 #### Requirements
 

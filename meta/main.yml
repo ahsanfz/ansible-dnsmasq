@@ -4,7 +4,7 @@ galaxy_info:
   author: oefenweb
   role_name: dnsmasq
   company: Oefenweb.nl B.V.
-  description: Set up dnsmasq in Debian-like systems
+  description: Set up dnsmasq in select systems
   license: MIT
   min_ansible_version: 2.10.0
   platforms:
@@ -13,11 +13,14 @@ galaxy_info:
         - xenial
         - bionic
         - focal
+        - jammy
     - name: Debian
       versions:
         - jessie
         - stretch
         - buster
+        - bullseye
+        - bookworm
   galaxy_tags:
     - system
     - networking

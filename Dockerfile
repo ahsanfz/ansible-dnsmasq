@@ -1,5 +1,5 @@
 FROM ubuntu:18.04
-MAINTAINER Mischa ter Smitten <mtersmitten@oefenweb.nl>
+LABEL Author="Mischa ter Smitten <mtersmitten@oefenweb.nl>" 
 
 ENV LANG C.UTF-8
 ENV LC_ALL C.UTF-8
