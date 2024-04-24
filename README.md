@@ -69,7 +69,7 @@ None
 ---
 - hosts: all
   pre_tasks:
-    - name: create resolv-file for dnsmasq
+    - name: Create resolv-file for dnsmasq
       ansible.builtin.copy:
         content: |
           nameserver 8.8.8.8

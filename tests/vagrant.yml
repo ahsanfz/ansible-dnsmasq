@@ -1,15 +1,19 @@
 # test file
 ---
-- hosts: all
+- name: Test play for vagrant machines
+  hosts: all
   remote_user: vagrant
   become: true
   pre_tasks:
-    - name: create resolv-file for dnsmasq
+    - name: Create resolv-file for dnsmasq
       ansible.builtin.copy:
         content: |
           nameserver 8.8.8.8
           nameserver 8.8.4.4
         dest: /etc/resolv.dnsmasq
+        owner: root
+        group: root
+        mode: "0664"
   roles:
     - ../../
   vars:

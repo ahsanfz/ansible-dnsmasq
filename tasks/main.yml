@@ -1,18 +1,32 @@
 # tasks file
 ---
-- name: install dependencies
+- name: Install dependencies Debian like systems
   ansible.builtin.apt:
     name: "{{ dnsmasq_dependencies }}"
     state: "{{ apt_install_state | default('latest') }}"
     update_cache: true
     cache_valid_time: "{{ apt_update_cache_valid_time | default(3600) }}"
+  when: ansible_facts['os_family'] == "Debian"
   tags:
     - configuration
     - dnsmasq
     - dnsmasq-install
     - dnsmasq-install-dependencies
 
-- name: update configuration file(s)
+- name: Install dependencies Redhat like systems
+  ansible.builtin.dnf:
+    name:
+      - "{{ dnsmasq_dependencies }}"
+    state: "{{ dnf_install_state | default('latest') }}"
+    update_cache: true
+  when: ansible_facts['os_family'] == "RedHat"
+  tags:
+    - configuration
+    - dnsmasq
+    - dnsmasq-install
+    - dnsmasq-install-dependencies
+
+- name: Update configuration file(s)
   ansible.builtin.template:
     src: "{{ item.src }}"
     dest: "{{ item.dest }}"
@@ -32,7 +46,7 @@
     - dnsmasq
     - dnsmasq-configuration
 
-- name: add specific configuration files
+- name: Add specific configuration files
   ansible.builtin.template:
     src: etc/dnsmasq.d/config.j2
     dest: "/etc/dnsmasq.d/{{ item.key }}"
@@ -48,7 +62,7 @@
     - dnsmasq-configuration
     - dnsmasq-configuration-add-specific-configuration-files
 
-- name: remove specific configuration files
+- name: Remove specific configuration files
   ansible.builtin.file:
     path: "/etc/dnsmasq.d/{{ item.key }}"
     state: absent
@@ -60,7 +74,7 @@
     - dnsmasq-configuration
     - dnsmasq-configuration-remove-specific-configuration-files
 
-- name: stop and disable (systemd-resolved) service
+- name: Stop and disable (systemd-resolved) service
   ansible.builtin.service:
     name: systemd-resolved
     state: stopped
@@ -71,7 +85,7 @@
     - dnsmasq
     - dnsmasq-stop-disable-service
 
-- name: start and enable service
+- name: Start and enable service
   ansible.builtin.service:
     name: dnsmasq
     state: "{{ dnsmasq_service_state }}"

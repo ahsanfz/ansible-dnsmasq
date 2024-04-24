@@ -3,5 +3,5 @@
   hosts: all
   become: true
   tasks:
-    - name: include tasks
+    - name: Include tasks
       ansible.builtin.import_tasks: "{{ playbook_dir }}/../../tests/tasks/post.yml"
